@@ -9,13 +9,13 @@ const CTA = () => {
           <h1 className="text-white font-bold text-2xl text-center lg:text-start lg:text-4xl lg:w-[500px]">
             Crie o seu{" "}
             <span
-              className="underline underline-offset-3 font-extrabold text-white"
+              className="underline underline-offset-3 font-semibold"
               style={{
                 textDecorationColor: "#4ade80",
                 textDecorationThickness: "2px",
               }}
             >
-              <span className="text-green-600">Z</span>apLink
+              WhatsLink
             </span>{" "}
             gratuitamente!
           </h1>
@@ -26,7 +26,7 @@ const CTA = () => {
         </div>
         <div className="flex flex-col lg:flex-row justify-center items-center w-full h-fit gap-4 ">
           <a
-            href="#zaplink"
+            href="#whatslink"
             className="flex justify-center items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-4 lg:px-7 py-4 lg:text-lg rounded-lg transition-all duration-500 "
           >
             <Link />

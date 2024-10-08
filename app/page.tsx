@@ -3,13 +3,15 @@
 import Hero from "@/components/hero";
 import Loader from "@/components/loader";
 import ZapCard from "@/components/zapCard";
-import { Download, MenuIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import HowWorks from "@/components/howWorks";
 import Footer from "@/components/footer";
 import ScrollToTop from "@/components/scrollToTop";
 import CTA from "@/components/cta";
 import { Badge } from "@/components/ui/badge";
+import Logo from "../public/assets/wl-logo.png";
+import Image from "next/image";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -42,19 +44,9 @@ export default function Home() {
   return (
     <>
       <div className="flex fixed items-center z-40 bg-white w-full lg:hidden px-6 py-6 ">
-        <a href="#" className="">
-          <h1>
-            <span
-              className="underline underline-offset-3 text-xl font-extrabold"
-              style={{
-                textDecorationColor: "#4ade80",
-                textDecorationThickness: "2px",
-              }}
-            >
-              <span className="text-green-600">Z</span>apLink
-            </span>
-          </h1>
-          {/* <Image src={Logo} alt="logoo" width={60} height={50} /> */}
+        <a href="#" className="flex items-center font-bold">
+          <Image src={Logo} alt="logoo" width={50} height={50} />
+          <h1>WhatsLink</h1>
         </a>
 
         <button
@@ -67,19 +59,12 @@ export default function Home() {
 
       {/* Menu */}
       <header className="fixed w-full lg:bg-white bg-transparent h-12 md:h-24 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-white-900 text-white antialiased font-bold mb-6 lg:mb-0 shadow-lg">
-        <a href="#" className="">
-          <h1>
-            <span
-              className="underline underline-offset-3 text-2xl font-extrabold text-gray-800"
-              style={{
-                textDecorationColor: "#4ade80",
-                textDecorationThickness: "2px",
-              }}
-            >
-              <span className="text-green-600">Z</span>apLink
-            </span>
-          </h1>
-          {/* <Image src={Logo} alt="logoo" width={100} height={100} /> */}
+        <a
+          href="#"
+          className="flex items-center font-bold text-gray-800 text-xl"
+        >
+          <Image src={Logo} alt="logoo" width={50} height={50} />
+          <h1>WhatsLink</h1>
         </a>
 
         <div
@@ -118,7 +103,7 @@ export default function Home() {
               onClick={() => closeMenuOnClick("#services")}
             >
               Nossa Extensão{" "}
-              <Badge className="bg-green-100 text-green-500 font-medium">
+              <Badge className="bg-green-100 text-green-500 font-medium hover:bg-green-200 hover:text-green-600">
                 em breve
               </Badge>
             </a>
@@ -126,14 +111,14 @@ export default function Home() {
 
           <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-5">
             {/* <a
-              href="#zaplink"
+              href="#whatslink"
               className="flex w-full px-4 py-4 lg:px-2 lg:py-2 rounded-lg text-base text-center justify-center items-center font-semibold text-slate-500 hover:text-green-500 transition-all duration-500  hover:font-semibold"
               onClick={() => closeMenuOnClick("#hero")}
             >
               Experimentar
             </a> */}
             <a
-              href="#zaplink"
+              href="#whatslink"
               className="flex w-full px-4 py-4 bg-green-500 rounded-lg text-base font-semibold text-white hover:bg-green-600 transition-all duration-500 hover:font-semibold"
               onClick={() => closeMenuOnClick("#hero")}
             >

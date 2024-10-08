@@ -2,6 +2,7 @@ import React from "react";
 import { Download, Link } from "lucide-react";
 import Image from "next/image";
 import HeroLogo from "../public/assets/zaplink.png";
+import WLogo from "../public/assets/wl-logo.png";
 
 const Hero = () => {
   return (
@@ -11,10 +12,6 @@ const Hero = () => {
     >
       <div className="flex flex-col justify-evenly items-center w-full">
         <div className="flex flex-col items-center lg:items-start lg:mt-10">
-          {/* <p className="text-center lg:text-start bg-emerald-500 w-fit px-4 py-2 rounded-full text-white font-bold mb-5">
-            #01 Cleaning Service
-          </p> */}
-
           <h1 className="text-3xl text-gray-900 text-center px-1 lg:px-0 font-bold lg:text-[60px] lg:w-[563px] lg:leading-none lg:text-start">
             Envie mensagens personalizadas no WhatsApp em segundos!
           </h1>
@@ -27,14 +24,14 @@ const Hero = () => {
                 textDecorationThickness: "2px",
               }}
             >
-              ZapLink
+              WhatsLink
             </span>
             , você cria links prontos para o WhatsApp com mensagens formatadas,
             de forma rápida e sem complicações.
           </p>
           <div className="flex lg:w-[600px] mt-6 mb-6 gap-4">
             <a
-              href="#zaplink"
+              href="#whatslink"
               className="flex bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 lg:px-7 lg:py-4 text-base lg:text-lg h-fit rounded-lg transition-all duration-500 "
             >
               <Link className="mr-2" size={24} />
@@ -56,6 +53,7 @@ const Hero = () => {
             src={HeroLogo}
             width={0}
             height={0}
+            quality={100}
             alt="hero-img"
           />
         </div>

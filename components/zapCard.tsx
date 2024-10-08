@@ -154,7 +154,7 @@ export function ZapCard() {
   return (
     <div
       className="flex flex-col lg:flex-row justify-center items-center mt-20 mb-20"
-      id="zaplink"
+      id="whatslink"
     >
       <div className="flex w-full lg:w-[800px] h-fit ">
         <div className="rounded-lg border bg-card text-card-foreground  w-full mx-6 shadow-lg ">
@@ -162,13 +162,13 @@ export function ZapCard() {
             <h3 className="text-2xl font-semibold leading-none tracking-tight text-center mt-3 mb-3">
               Experimente o{" "}
               <span
-                className="underline underline-offset-3"
+                className="underline underline-offset-3 font-semibold"
                 style={{
                   textDecorationColor: "#4ade80",
                   textDecorationThickness: "2px",
                 }}
               >
-                <span className="text-green-600">Z</span>apLink
+                WhatsLink
               </span>
             </h3>
             <p className="text-base text-muted-foreground ">
@@ -300,7 +300,7 @@ export function ZapCard() {
             </form>
             <div className="flex flex-col w-[350px] gap-4 ">
               <Label className="text-base font-medium  text-gray-800">
-                Pré-visualização da mensagem
+                Prévia da mensagem
               </Label>
               <div className="flex border h-full rounded-md p-2">
                 <div dangerouslySetInnerHTML={{ __html: previewMessage }}></div>
@@ -327,7 +327,7 @@ export function ZapCard() {
               variant="default"
               onClick={() => generateLink()}
             >
-              Gerar ZapLink
+              Gerar WhatsLink
               <Copy size={16} className="ml-2" />
             </Button>
           </div>

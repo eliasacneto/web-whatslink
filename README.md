@@ -1,20 +1,19 @@
 <div align="center">
-<img alt="" src="././public/assets/zl-gh.png" width="60%" >
- <h4><b>Create Customized WhatsApp Links Easily!</b></h4>
+<img alt="" src="././public/assets/wl-gh.png" width="60%" >
 </div>
 <hr/>
 
 ## 🌍 Access the Live Demo
 
-→ **Check out** ZapLink in action [here](http://zaplink.vercel.app)
+→ **Check out** WhatsLink in action [here](http://whatsink.vercel.app)
 
-## 🌟 What is ZapLink?
+## 🌟 What is WhatsLink?
 
-**ZapLink** is a simple yet powerful web application that allows you to create personalized WhatsApp messages and generate shareable links in just a few seconds. <br/><br/>Customize your messages with text formatting (bold, italics, emojis) and send them with ease.
+**WhatsLink** is a simple yet powerful web application that allows you to create personalized WhatsApp messages and generate shareable links in just a few seconds. <br/><br/>Customize your messages with text formatting (bold, italics, emojis) and send them with ease.
 
-Use **ZapLink** directly on the website **for free** and enhance your WhatsApp messaging experience, whether you're running a business or simply want to personalize your messages!
+Use **WhatsLink** directly on the website **for free** and enhance your WhatsApp messaging experience, whether you're running a business or simply want to personalize your messages!
 
-## 📦 How to Use ZapLink
+## 📦 How to Use WhatsLink
 
 - Create a Custom WhatsApp Message
 - Enter the phone number (including the country code).
@@ -23,7 +22,7 @@ Use **ZapLink** directly on the website **for free** and enhance your WhatsApp m
 - Click Generate Link to create your personalized WhatsApp link.
 - Copy and share the link with your contacts!
 
-## 🎯 How Does ZapLink Work?
+## 🎯 How Does WhatsLink Work?
 
 1. **Enter the Phone Number** – Add the country code and phone number.
 2. **Customize Your Message** – Format your message with bold, italics, and emojis.
@@ -37,23 +36,23 @@ Use **ZapLink** directly on the website **for free** and enhance your WhatsApp m
 - 💻 **Free to Use**: No need to download anything – it's all online!
 - 📲 **Perfect for Businesses and Personal Use**: Automate replies, promotions, or send creative messages.
 - 🌍 **Global Reach**: Works with any country code and phone number.
-- 🖱️ **Chrome Extension Available Soon**: Use the Chrome extension for quick access to ZapLink.
+- 🖱️ **Chrome Extension Available Soon**: Use the Chrome extension for quick access to WhatsLink.
 
 ## 🛠️ Installation (for Developers)
 
-If you'd like to run **ZapLink** locally or contribute to the project, follow these steps:
+If you'd like to run **WhatsLink** locally or contribute to the project, follow these steps:
 
 #### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/eliasacneto/web-zaplink.git
+git clone https://github.com/eliasacneto/web-whatslink.git
 
 ```
 
 #### 2. Navigate to directory:
 
 ```bash
-cd web-zaplink
+cd web-whatslink
 
 ```
 

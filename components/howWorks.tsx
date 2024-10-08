@@ -59,7 +59,7 @@ const HowWorks = () => {
           </div>
           <div className="flex flex-col text-center mt-6">
             <h2 className="font-bold text-lg lg:text-2xl text-gray-900">
-              Gere o ZapLink
+              Gere o WhatsLink
             </h2>
             <p className="gray-500 font-medium lg:w-[311px]">
               Em apenas um clique, seu link está pronto para compartilhar no

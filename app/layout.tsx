@@ -8,7 +8,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "ZapLink - Gerador de Link para o WhatsApp",
+  title: "WhatsLink - Gerador de Link para o WhatsApp",
   description: "Envie mensagens personalizadas no WhatsApp em segundos!",
 };
 
