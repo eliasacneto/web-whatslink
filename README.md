@@ -5,7 +5,7 @@
 
 ## 🌍 Access the Live Demo
 
-→ **Check out** WhatsLink in action [here](http://whatsink.vercel.app)
+→ **Check out** WhatsLink in action <a href="http://whatslink.vercel.app" target="_blank">here</a>
 
 ## 🌟 What is WhatsLink?
 
