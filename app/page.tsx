@@ -10,7 +10,8 @@ import Footer from "@/components/footer";
 import ScrollToTop from "@/components/scrollToTop";
 import CTA from "@/components/cta";
 import { Badge } from "@/components/ui/badge";
-export function Home() {
+
+export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
@@ -159,5 +160,3 @@ export function Home() {
     </>
   );
 }
-
-export default Home;
