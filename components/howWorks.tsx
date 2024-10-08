@@ -7,8 +7,8 @@ const HowWorks = () => {
       id="how-to-use"
     >
       <div className="flex flex-col justify-center items-center lg:mt-10 mb-12 gap-4">
-        <span className="bg-green-100 text-green-500 px-4 py-1 rounded-full">
-          Facilidade
+        <span className="bg-green-100 text-sm lg:text-base text-green-500 px-4 py-1 rounded-full">
+          mais facilidade para você
         </span>
         <div className="flex flex-col items-center text-center">
           <h1 className="font-bold text-center text-[26px] lg:text-[48px] text-gray-900">

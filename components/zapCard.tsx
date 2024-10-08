@@ -156,8 +156,8 @@ export function ZapCard() {
       className="flex flex-col lg:flex-row justify-center items-center mt-20 mb-20"
       id="whatslink"
     >
-      <div className="flex w-full lg:w-[800px] h-fit ">
-        <div className="rounded-lg border bg-card text-card-foreground  w-full mx-6 shadow-lg ">
+      <div className="flex w-[90%] lg:w-[800px] h-fit ">
+        <div className="rounded-lg border bg-card text-card-foreground  w-full lg:mx-6 shadow-lg ">
           <div className="flex flex-col space-y-1.5 p-6 text-center">
             <h3 className="text-2xl font-semibold leading-none tracking-tight text-center mt-3 mb-3">
               Experimente o{" "}

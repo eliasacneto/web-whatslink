@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex fixed items-center z-40 bg-white w-full lg:hidden px-6 py-6 ">
+      <div className="flex fixed items-center z-40 bg-white w-full lg:hidden px-6 py-6 shadow-md">
         <a href="#" className="flex items-center font-bold">
           <Image src={Logo} alt="logoo" width={50} height={50} />
           <h1>WhatsLink</h1>
@@ -51,14 +51,14 @@ export default function Home() {
 
         <button
           onClick={toggleMenu}
-          className="fixed flex items-center top-2 right-0 p-4 z-40 lg:hidden lg:bg-none  rounded-lg"
+          className="fixed flex items-center top-2 right-0 p-4 z-40 lg:hidden lg:bg-none rounded-lg"
         >
           <MenuIcon size={28} className="text-green-500 font-bold" />
         </button>
       </div>
 
       {/* Menu */}
-      <header className="fixed w-full lg:bg-white bg-transparent h-12 md:h-24 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-white-900 text-white antialiased font-bold mb-6 lg:mb-0 shadow-lg">
+      <header className="lg:fixed w-full lg:bg-white bg-transparent h-12 md:h-24 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-white-900 text-white antialiased font-bold mb-20 lg:mb-0 shadow-lg">
         <a
           href="#"
           className="flex items-center font-bold text-gray-800 text-xl"
