@@ -1,101 +1,163 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Hero from "@/components/hero";
+import Loader from "@/components/loader";
+import ZapCard from "@/components/zapCard";
+import { Download, MenuIcon } from "lucide-react";
+import { useEffect, useState } from "react";
+import HowWorks from "@/components/howWorks";
+import Footer from "@/components/footer";
+import ScrollToTop from "@/components/scrollToTop";
+import CTA from "@/components/cta";
+import { Badge } from "@/components/ui/badge";
+export function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenuOnClick = (sectionId: string) => {
+    setIsMenuOpen(false);
+    const section = document.querySelector(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <div className="flex fixed items-center z-40 bg-white w-full lg:hidden px-6 py-6 ">
+        <a href="#" className="">
+          <h1>
+            <span
+              className="underline underline-offset-3 text-xl font-extrabold"
+              style={{
+                textDecorationColor: "#4ade80",
+                textDecorationThickness: "2px",
+              }}
+            >
+              <span className="text-green-600">Z</span>apLink
+            </span>
+          </h1>
+          {/* <Image src={Logo} alt="logoo" width={60} height={50} /> */}
+        </a>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <button
+          onClick={toggleMenu}
+          className="fixed flex items-center top-2 right-0 p-4 z-40 lg:hidden lg:bg-none  rounded-lg"
+        >
+          <MenuIcon size={28} className="text-green-500 font-bold" />
+        </button>
+      </div>
+
+      {/* Menu */}
+      <header className="fixed w-full lg:bg-white bg-transparent h-12 md:h-24 px-8 md:px-12 lg:px-8 xl:px-28 flex gap-8 items-center bg-white-900 text-white antialiased font-bold mb-6 lg:mb-0 shadow-lg">
+        <a href="#" className="">
+          <h1>
+            <span
+              className="underline underline-offset-3 text-2xl font-extrabold text-gray-800"
+              style={{
+                textDecorationColor: "#4ade80",
+                textDecorationThickness: "2px",
+              }}
+            >
+              <span className="text-green-600">Z</span>apLink
+            </span>
+          </h1>
+          {/* <Image src={Logo} alt="logoo" width={100} height={100} /> */}
+        </a>
+
+        <div
+          className={`fixed lg:relative top-0 left-0 bg-green-50 z-20 lg:bg-transparent bg-opacity-95 text-center overflow-hidden transition-all duration-500 flex flex-col lg:flex-row gap-8 items-center justify-center w-full lg:h-full lg:opacity-100 ${
+            isMenuOpen ? "h-full opacity-100" : "h-0 opacity-0"
+          }`}
+        >
+          <nav className="lg:flex-1 justify-center flex gap-8 flex-col lg:flex-row text-center lg:ml-16">
+            <a
+              className=" text-green-500 text-base font-semibold transition-all duration-500"
+              href="/"
+              onClick={() => closeMenuOnClick("#")}
+            >
+              Início
+            </a>
+
+            <a
+              className=" text-gray-500 hover:text-green-500 text-base font-medium transition-all duration-500"
+              href="#how-to-use"
+              onClick={() => closeMenuOnClick("#how")}
+            >
+              Como Funciona
+            </a>
+
+            {/* <a
+              className=" text-gray-500 hover:text-green-500 text-base font-medium transition-all duration-500"
+              href="#benefits"
+              onClick={() => closeMenuOnClick("#about")}
+            >
+              Porque usar
+            </a> */}
+
+            <a
+              className=" text-gray-500 hover:text-green-500 text-base font-medium transition-all duration-500"
+              href="#extension"
+              onClick={() => closeMenuOnClick("#services")}
+            >
+              Nossa Extensão{" "}
+              <Badge className="bg-green-100 text-green-500 font-medium">
+                em breve
+              </Badge>
+            </a>
+          </nav>
+
+          <div className="flex items-center flex-col gap-5 lg:flex-row lg:gap-5">
+            {/* <a
+              href="#zaplink"
+              className="flex w-full px-4 py-4 lg:px-2 lg:py-2 rounded-lg text-base text-center justify-center items-center font-semibold text-slate-500 hover:text-green-500 transition-all duration-500  hover:font-semibold"
+              onClick={() => closeMenuOnClick("#hero")}
+            >
+              Experimentar
+            </a> */}
+            <a
+              href="#zaplink"
+              className="flex w-full px-4 py-4 bg-green-500 rounded-lg text-base font-semibold text-white hover:bg-green-600 transition-all duration-500 hover:font-semibold"
+              onClick={() => closeMenuOnClick("#hero")}
+            >
+              Experimentar
+            </a>
+            {/* <a
+              href="#extension"
+              className="flex w-full px-4 py-4 bg-green-500 rounded-lg text-base font-semibold text-white hover:bg-green-600 transition-all duration-500 hover:font-semibold"
+              onClick={() => closeMenuOnClick("#hero")}
+            >
+              <Download className="mr-2" />
+              Extensão
+            </a> */}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </header>
+      <Hero />
+      <HowWorks />
+      {/* <Benefits /> */}
+      <ZapCard />
+      <CTA />
+      <Footer />
+      <ScrollToTop />
+    </>
   );
 }
+
+export default Home;
