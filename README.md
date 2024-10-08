@@ -1,6 +1,8 @@
-# 🚀 ZapLink - Create Customized WhatsApp Links Easily!
-
-![ZapLink Banner](https://via.placeholder.com/1200x400) <!-- Add a link to your banner image here -->
+<div align="center">
+<img alt="" src="././public/assets/zl-gh.png" width="60%" >
+ <h4><b>Create Customized WhatsApp Links Easily!</b></h4>
+</div>
+<hr/>
 
 ## 🌍 Access the Live Demo
 
