@@ -133,7 +133,15 @@ export function ZapCard() {
           Swal.fire({
             text: "Seu link copiado para a área de transferência!",
             icon: "success",
-            confirmButtonText: "Ok",
+            showCancelButton: true,
+            confirmButtonText: "Abrir no WhatsApp",
+            confirmButtonColor: "#22C55E",
+            cancelButtonColor: "#94a3b8",
+            cancelButtonText: "Fechar",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.open(link, "_blank");
+            }
           });
         })
         .catch((err) => {
@@ -150,7 +158,9 @@ export function ZapCard() {
       //   alert("Preencha todos os campos!");
     }
   };
+
   useEffect(() => {}, []);
+
   return (
     <div
       className="flex flex-col lg:flex-row justify-center items-center mt-20 mb-20"
@@ -172,14 +182,14 @@ export function ZapCard() {
               </span>
             </h3>
             <p className="text-base text-muted-foreground ">
-              Preencha os campos e estilize sua mensagem para enviar pelo
-              WhatsApp
+              Preencha os campos e personalize sua mensagem para enviar via
+              WhatsApp.
             </p>
             <p className="text-red-400 font-semibold antialiased text-[12px]">
               *Campos obrigatórios
             </p>
           </div>
-          <div className=" p-6 pt-0 flex flex-col lg:flex-row gap-20">
+          <div className=" p-6 pt-0 flex flex-col lg:flex-row gap-10">
             <form className="lg:w-1/2">
               <div className="grid w-full items-center gap-2">
                 <div className="flex flex-col space-y-1.5">
@@ -282,7 +292,7 @@ export function ZapCard() {
                     </ToggleGroup>
                   </div>
                   <Textarea
-                    className="text-base w-full"
+                    className="text-sm w-full placeholder:text-sm"
                     rows={6}
                     placeholder="Digite a sua mensagem aqui..."
                     id="messageTextarea"
@@ -302,7 +312,7 @@ export function ZapCard() {
               <Label className="text-base font-medium  text-gray-800">
                 Prévia da mensagem
               </Label>
-              <div className="flex border h-full rounded-md p-2">
+              <div className="flex border h-full text-sm rounded-md p-2">
                 <div dangerouslySetInnerHTML={{ __html: previewMessage }}></div>
               </div>
             </div>

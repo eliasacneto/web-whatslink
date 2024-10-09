@@ -83,28 +83,26 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Estilos para o scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
-    /* Largura da barra de rolagem */
 }
 
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
-    /* Cor de fundo do track */
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #22c55e;
-    /* Cor da barra de rolagem (verde) */
     border-radius: 6px;
-    /* Bordas arredondadas */
     border: 3px solid #f1f1f1;
-    /* Espaço em torno do polegar */
 }
 
-/* Opcional: scrollbar para o Firefox */
 * {
     scrollbar-width: thin;
     scrollbar-color: #22c55e #f1f1f1;
+
+}
+
+body {
+    overflow-x: hidden;
 }
