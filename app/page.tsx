@@ -13,7 +13,11 @@ import { Badge } from "@/components/ui/badge";
 import Logo from "../public/assets/wl-logo.png";
 import Image from "next/image";
 
+import { useTranslations } from "next-intl";
+
 export default function Home() {
+  const t = useTranslations("menu");
+
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
@@ -78,7 +82,7 @@ export default function Home() {
               href="/"
               onClick={() => closeMenuOnClick("#")}
             >
-              Início
+              {t("home")}
             </a>
 
             <a
@@ -122,7 +126,7 @@ export default function Home() {
               className="flex w-full px-4 py-4 bg-green-500 rounded-lg text-base font-semibold text-white hover:bg-green-600 transition-all duration-500 hover:font-semibold"
               onClick={() => closeMenuOnClick("#hero")}
             >
-              Experimentar
+              {t("title")}
             </a>
             {/* <a
               href="#extension"

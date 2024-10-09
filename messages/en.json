@@ -1,0 +1,18 @@
+{
+    "menu": {
+        "home": "Home",
+        "howWorks": "How it works",
+        "ourExtension": "Our extension",
+        "soon": "coming soon"
+      },
+    "home": {
+      "title": "Welcome to WhatsLink",
+      "description": "Create and send personalized WhatsApp messages in seconds!"
+    },
+    "common": {
+      "button": {
+        "create": "Create Link",
+        "send": "Send Message"
+      }
+    }
+  }
