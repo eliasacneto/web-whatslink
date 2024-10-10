@@ -1,34 +1,38 @@
 import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 
+const locales = ["en", "pt", "es"];
+const defaultLocale = "pt";
+
 function getLocale(request: NextRequest) {
   const acceptLanguage = request.headers.get("Accept-Language");
   if (acceptLanguage) {
-    const [browserLocale] = acceptLanguage.split(",");
-    if (["en", "pt", "es"].includes(browserLocale)) {
-      return browserLocale;
+    const preferredLocale = acceptLanguage.split(",")[0].split("-")[0];
+    if (locales.includes(preferredLocale)) {
+      return preferredLocale;
     }
   }
-  return "pt"; // Idioma padrão
+  return defaultLocale;
 }
 
 export function middleware(request: NextRequest) {
-  const locale = getLocale(request);
   const pathname = request.nextUrl.pathname;
+  const pathnameIsMissingLocale = locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  );
 
-  // Redireciona a rota raiz para o idioma detectado
-  if (pathname === "/") {
+  if (pathnameIsMissingLocale) {
+    const locale = getLocale(request);
     return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
   }
 
-  // Aplica o middleware de internacionalização
   return createMiddleware({
-    locales: ["en", "pt", "es"],
-    defaultLocale: "pt",
-    localeDetection: false, // Desativa a detecção automática do next-intl
+    locales,
+    defaultLocale,
+    localeDetection: false,
   })(request);
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|.*\\..*).*)", "/"],
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };

@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const HowWorks = () => {
+  const t = useTranslations("howWorks");
   return (
     <div
       className="flex flex-col justify-center items-center mt-6 mx-4"
@@ -8,15 +10,13 @@ const HowWorks = () => {
     >
       <div className="flex flex-col justify-center items-center lg:mt-10 mb-12 gap-4">
         <span className="bg-green-100 text-sm lg:text-base text-green-500 px-4 py-1 rounded-full">
-          mais facilidade para você
+          {t("badge")}
         </span>
         <div className="flex flex-col items-center text-center">
           <h1 className="font-bold text-center text-[26px] lg:text-[48px] text-gray-900">
-            Simples e fácil, como tudo deve ser
+            {t("title")}
           </h1>
-          <p className="w-[70%]">
-            O passo a passo mais simples que você já viu!
-          </p>
+          <p className="w-[70%]">{t("subtitle")}</p>
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-10 mx-6 ">
@@ -27,11 +27,10 @@ const HowWorks = () => {
           </div>
           <div className="flex flex-col text-center mt-6">
             <h2 className="font-bold text-lg lg:text-2xl text-gray-900">
-              Adicione o número
+              {t("cardTitle1")}
             </h2>
             <p className="gray-500 font-medium lg:w-[311px]">
-              Selecione o código do país desejado e insira um número de WhatsApp
-              válido.
+              {t("cardDescription1")}
             </p>
           </div>
         </div>
@@ -43,11 +42,10 @@ const HowWorks = () => {
           </div>
           <div className="flex flex-col text-center mt-6">
             <h2 className="font-bold text-lg lg:text-2xl text-gray-900">
-              Escreva sua mensagem
+              {t("cardTitle2")}
             </h2>
             <p className="gray-500 font-medium lg:w-[311px]">
-              Formate o texto como quiser. Adicione estilo ao seu texto, como
-              negrito, itálico, listas e muito mais.
+              {t("cardDescription2")}
             </p>
           </div>
         </div>
@@ -59,11 +57,10 @@ const HowWorks = () => {
           </div>
           <div className="flex flex-col text-center mt-6">
             <h2 className="font-bold text-lg lg:text-2xl text-gray-900">
-              Gere o WhatsLink
+              {t("cardTitle3")}
             </h2>
             <p className="gray-500 font-medium lg:w-[311px]">
-              Em apenas um clique, seu link está pronto para compartilhar no
-              WhatsApp!
+              {t("cardDescription3")}
             </p>
           </div>
         </div>

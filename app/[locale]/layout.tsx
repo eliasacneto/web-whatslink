@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins } from "@next/font/google";
+import { Poppins } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -21,16 +20,18 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale?: string };
 }) {
+  const locale = params.locale || "pt"; // Use 'pt' as default if locale is undefined
   let messages;
   try {
-    messages = (await import(`../messages/${locale}.json`)).default;
+    messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
-    notFound();
+    console.error(`Failed to load messages for locale: ${locale}`, error);
+    messages = {}; // Fallback to empty messages
   }
 
   return (

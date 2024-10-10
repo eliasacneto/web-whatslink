@@ -3,16 +3,70 @@
         "home": "Home",
         "howWorks": "How it works",
         "ourExtension": "Our extension",
-        "soon": "coming soon"
+        "soon": "coming soon",
+        "try":"Try it now!"
       },
-    "home": {
-      "title": "Welcome to WhatsLink",
-      "description": "Create and send personalized WhatsApp messages in seconds!"
-    },
+      "hero":{
+        "title":"Send personalized messages on WhatsApp in seconds!",
+        "subtitle1":"With",
+        "subtitle2":", you can create ready-made links for WhatsApp with formatted messages, quickly and without complications.",
+        "cta1":"Create now",
+        "cta2":"Get extension"
+      },
+
+      "howWorks":{
+        "badge":"more ease for you",
+        "title":"Simple and easy, as everything should be",
+        "subtitle":"The simplest step-by-step guide you've ever seen!",
+        "cardTitle1":"Add the number",
+        "cardDescription1":"Select the desired country code and enter a valid WhatsApp number.",
+        "cardTitle2":"Write your message",
+        "cardDescription2":"Format your text however you like. Add style to your text, such as bold, italics, lists, and more.",
+        "cardTitle3":"Generate WhatsLink",
+        "cardDescription3":"In just one click, your link is ready to share on WhatsApp!"
+      },
+
+      "zapCard": {
+        "title": "Try",
+        "subtitle": "Fill in the fields and customize your message to send via WhatsApp.",
+        "requiredFields": "*Required fields",
+        "number":"WhatsApp Number",
+        "message": "Message",
+        "placeholdMessage": "Type your message here...",
+        "preview":"Preview",
+        "clear":"Clear",
+        "generate":"Generate WhatsLink"
+      },
+
+      "countries": {
+        "BR": "Brazil",
+        "US": "United States",
+        "UK": "United Kingdom",
+        "DE": "Germany",
+        "ES": "Spain",
+        "PT": "Portugal",
+        "IE": "Ireland"
+      },
+
+      "cta": {
+        "title1": "Create your",
+        "title2": "for free!",
+        "subtitle": "Whether for business or personal conversations, we've created the ideal tool to personalize your messages and share on WhatsApp.",
+       
+        "cta1":"Create now",
+        "cta2":"Download Extension"
+      },
+
+
     "common": {
       "button": {
         "create": "Create Link",
         "send": "Send Message"
+      },
+      "language": {
+        "english": "English",
+        "portuguese": "Portuguese",
+        "spanish": "Spanish"
       }
     }
   }

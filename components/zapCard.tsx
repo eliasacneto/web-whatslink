@@ -25,16 +25,26 @@ import {
   Strikethrough,
 } from "lucide-react";
 import Swal from "sweetalert2";
+import { useTranslations } from "next-intl";
+
+interface CountryOption {
+  code: string;
+  name: string;
+  flag: string;
+}
 
 export function ZapCard() {
-  const countryOptions = [
-    { code: "55", name: "Brasil", flag: "🇧🇷" },
-    { code: "1", name: "EUA", flag: "🇺🇸" },
-    { code: "44", name: "Reino Unido", flag: "🇬🇧" },
-    { code: "49", name: "Alemanha", flag: "🇩🇪" },
-    { code: "34", name: "Espanha", flag: "🇪🇸" },
-    { code: "351", name: "Portugal", flag: "🇵🇹" },
-    { code: "353", name: "Irlanda", flag: "🇮🇪" },
+  const t: (key: string) => string = useTranslations("zapCard");
+  const c: (key: string) => string = useTranslations("countries");
+
+  const countryOptions: CountryOption[] = [
+    { code: "55", name: c("BR"), flag: "🇧🇷" },
+    { code: "1", name: c("US"), flag: "🇺🇸" },
+    { code: "44", name: c("UK"), flag: "🇬🇧" },
+    { code: "49", name: c("DE"), flag: "🇩🇪" },
+    { code: "34", name: c("ES"), flag: "🇪🇸" },
+    { code: "351", name: c("PT"), flag: "🇵🇹" },
+    { code: "353", name: c("IE"), flag: "🇮🇪" },
   ];
 
   const [countryCode, setCountryCode] = useState(countryOptions[0]);
@@ -170,7 +180,7 @@ export function ZapCard() {
         <div className="rounded-lg border bg-card text-card-foreground  w-full lg:mx-6 shadow-lg ">
           <div className="flex flex-col space-y-1.5 p-6 text-center">
             <h3 className="text-2xl font-semibold leading-none tracking-tight text-center mt-3 mb-3">
-              Experimente o{" "}
+              {t("title")}{" "}
               <span
                 className="underline underline-offset-3 font-semibold"
                 style={{
@@ -181,12 +191,9 @@ export function ZapCard() {
                 WhatsLink
               </span>
             </h3>
-            <p className="text-base text-muted-foreground ">
-              Preencha os campos e personalize sua mensagem para enviar via
-              WhatsApp.
-            </p>
+            <p className="text-base text-muted-foreground ">{t("subtitle")}</p>
             <p className="text-red-400 font-semibold antialiased text-[12px]">
-              *Campos obrigatórios
+              {t("requiredFields")}
             </p>
           </div>
           <div className=" p-6 pt-0 flex flex-col lg:flex-row gap-10">
@@ -197,7 +204,7 @@ export function ZapCard() {
                     htmlFor="whatsappNumber"
                     className="text-base font-medium mb-2 text-gray-800"
                   >
-                    Número do WhatsApp
+                    {t("number")}
                     <span className="font-bold text-red-300">*</span>
                   </Label>
                   <div className="flex gap-2">
@@ -243,7 +250,8 @@ export function ZapCard() {
                     htmlFor="message"
                     className="text-base font-medium mb-2 text-gray-800"
                   >
-                    Mensagem<span className="font-bold text-red-300">*</span>
+                    {t("message")}
+                    <span className="font-bold text-red-300">*</span>
                   </Label>
                   <div className="flex gap-2">
                     <ToggleGroup type="multiple">
@@ -310,7 +318,7 @@ export function ZapCard() {
             </form>
             <div className="flex flex-col w-[350px] gap-4 ">
               <Label className="text-base font-medium  text-gray-800">
-                Prévia da mensagem
+                {t("preview")}
               </Label>
               <div className="flex border h-full text-sm rounded-md p-2">
                 <div dangerouslySetInnerHTML={{ __html: previewMessage }}></div>
@@ -322,7 +330,7 @@ export function ZapCard() {
               className="font-semibold bg-red-500 hover:bg-red-600"
               onClick={() => clearFields()}
             >
-              Limpar
+              {t("clear")}
               <Eraser size={16} className="ml-2" />
             </Button>
             {/* <Button
@@ -337,7 +345,7 @@ export function ZapCard() {
               variant="default"
               onClick={() => generateLink()}
             >
-              Gerar WhatsLink
+              {t("generate")}
               <Copy size={16} className="ml-2" />
             </Button>
           </div>

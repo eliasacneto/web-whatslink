@@ -10,10 +10,11 @@ import Footer from "@/components/footer";
 import ScrollToTop from "@/components/scrollToTop";
 import CTA from "@/components/cta";
 import { Badge } from "@/components/ui/badge";
-import Logo from "../public/assets/wl-logo.png";
+import Logo from "../../public/assets/wl-logo.png";
 import Image from "next/image";
 
 import { useTranslations } from "next-intl";
+import LanguageSwitcher from "@/components/languageSwitcher";
 
 export default function Home() {
   const t = useTranslations("menu");
@@ -90,7 +91,7 @@ export default function Home() {
               href="#how-to-use"
               onClick={() => closeMenuOnClick("#how")}
             >
-              Como Funciona
+              {t("howWorks")}
             </a>
 
             {/* <a
@@ -106,9 +107,9 @@ export default function Home() {
               href="#extension"
               onClick={() => closeMenuOnClick("#services")}
             >
-              Nossa Extensão{" "}
+              {t("ourExtension")}{" "}
               <Badge className="bg-green-100 text-green-500 font-medium hover:bg-green-200 hover:text-green-600">
-                em breve
+                {t("soon")}
               </Badge>
             </a>
           </nav>
@@ -126,8 +127,9 @@ export default function Home() {
               className="flex w-full px-4 py-4 bg-green-500 rounded-lg text-base font-semibold text-white hover:bg-green-600 transition-all duration-500 hover:font-semibold"
               onClick={() => closeMenuOnClick("#hero")}
             >
-              {t("title")}
+              {t("try")}
             </a>
+            <LanguageSwitcher />
             {/* <a
               href="#extension"
               className="flex w-full px-4 py-4 bg-green-500 rounded-lg text-base font-semibold text-white hover:bg-green-600 transition-all duration-500 hover:font-semibold"
@@ -140,6 +142,7 @@ export default function Home() {
         </div>
       </header>
       <Hero />
+
       <HowWorks />
       {/* <Benefits /> */}
       <ZapCard />

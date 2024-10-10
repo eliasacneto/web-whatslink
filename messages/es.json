@@ -1,0 +1,71 @@
+{
+    "menu": {
+        "home": "Inicio",
+        "howWorks": "Cómo funciona",
+        "ourExtension": "Nuestra extensión",
+        "soon": "próximamente",
+        "try": "Probar"
+    },
+
+    "hero": {
+        "title": "¡Envía mensajes personalizados en WhatsApp en segundos!",
+        "subtitle1": "Con el",
+        "subtitle2": ", creas enlaces listos para WhatsApp con mensajes formateados, de forma rápida y sin complicaciones.",
+        "cta1": "Crear ahora",
+        "cta2": "Extensión"
+    },
+
+    "howWorks": {
+        "badge": "más facilidad para ti",
+        "title": "Simple y fácil, como todo debería ser",
+        "subtitle": "¡El proceso más sencillo que has visto!",
+        "cardTitle1": "Añade el número",
+        "cardDescription1": "Selecciona el código del país deseado e introduce un número de WhatsApp válido.",
+        "cardTitle2": "Escribe tu mensaje",
+        "cardDescription2": "Formatea el texto como quieras. Añade estilo a tu texto, como negrita, cursiva, listas y mucho más.",
+        "cardTitle3": "Genera el WhatsLink",
+        "cardDescription3": "¡Con solo un clic, tu enlace estará listo para compartir en WhatsApp!"
+    },
+
+    "zapCard": {
+        "title": "Prueba el",
+        "subtitle": "Completa los campos y personaliza tu mensaje para enviar por WhatsApp.",
+        "requiredFields": "*Campos obligatorios",
+        "number": "Número de WhatsApp",
+        "message": "Mensaje",
+        "placeholdMessage": "Escribe tu mensaje aquí...",
+        "preview": "Vista previa del mensaje",
+        "clear": "Limpiar",
+        "generate": "Generar WhatsLink"
+    },
+
+    "countries": {
+        "BR": "Brasil",
+        "US": "Estados Unidos",
+        "UK": "Reino Unido",
+        "DE": "Alemania",
+        "ES": "España",
+        "PT": "Portugal",
+        "IE": "Irlanda"
+    },
+
+    "cta": {
+        "title1": "¡Crea tu",
+        "title2": "gratis!",
+        "subtitle": "Ya sea para negocios o conversaciones personales, hemos creado la herramienta ideal para personalizar tus mensajes y compartir en WhatsApp.",
+        "cta1": "Crear ahora",
+        "cta2": "Descargar extensión"
+    },
+
+    "common": {
+        "button": {
+            "create": "Crear enlace",
+            "send": "Enviar mensaje"
+        },
+        "language": {
+            "english": "Inglés",
+            "portuguese": "Portugués",
+            "spanish": "Español"
+        }
+    }
+}
