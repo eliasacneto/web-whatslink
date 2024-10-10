@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server"; // Importação da API
 import "./globals.css";
 
 const poppins = Poppins({
@@ -25,13 +26,17 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale?: string };
 }) {
-  const locale = params.locale || "pt"; // Use 'pt' as default if locale is undefined
+  const locale = params.locale || "pt"; // Use 'pt' como padrão se locale estiver indefinido
+
+  // Definir o idioma de forma estática
+  unstable_setRequestLocale(locale);
+
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
     console.error(`Failed to load messages for locale: ${locale}`, error);
-    messages = {}; // Fallback to empty messages
+    messages = {}; // Fallback para mensagens vazias
   }
 
   return (
