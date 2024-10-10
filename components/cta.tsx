@@ -28,7 +28,7 @@ const CTA = () => {
         <div className="flex flex-col lg:flex-row justify-center items-center w-full h-fit gap-4 ">
           <a
             href="#whatslink"
-            className="flex justify-center items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-4 lg:px-7 py-4 lg:text-lg rounded-lg transition-all duration-500 "
+            className="flex justify-center items-center text-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-4 lg:px-7 py-4 lg:text-lg rounded-lg transition-all duration-500 "
           >
             <Link />
             {t("cta1")}
@@ -36,7 +36,7 @@ const CTA = () => {
 
           <a
             href="#"
-            className="flex justify-center items-center gap-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 lg:px-7 py-4 lg:text-lg rounded-lg transition-all duration-500 "
+            className="flex justify-center items-center text-center gap-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 lg:px-7 py-4 lg:text-lg rounded-lg transition-all duration-500 "
           >
             <Download />
             {t("cta2")}
