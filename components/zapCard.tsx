@@ -36,6 +36,7 @@ interface CountryOption {
 export function ZapCard() {
   const t: (key: string) => string = useTranslations("zapCard");
   const c: (key: string) => string = useTranslations("countries");
+  const a: (key: string) => string = useTranslations("alerts");
 
   const countryOptions: CountryOption[] = [
     { code: "55", name: c("BR"), flag: "🇧🇷" },
@@ -74,7 +75,7 @@ export function ZapCard() {
 
   const clearFields = () => {
     Swal.fire({
-      text: "Limpando os campos!",
+      text: a("cleaning"),
       timer: 1500,
       timerProgressBar: true,
       didOpen: () => {
@@ -141,13 +142,13 @@ export function ZapCard() {
         .writeText(link)
         .then(() => {
           Swal.fire({
-            text: "Seu link copiado para a área de transferência!",
+            text: a("clipboard"),
             icon: "success",
             showCancelButton: true,
-            confirmButtonText: "Abrir no WhatsApp",
+            confirmButtonText: a("openWhatsapp"),
             confirmButtonColor: "#22C55E",
             cancelButtonColor: "#94a3b8",
-            cancelButtonText: "Fechar",
+            cancelButtonText: a("close"),
           }).then((result) => {
             if (result.isConfirmed) {
               window.open(link, "_blank");
@@ -159,10 +160,10 @@ export function ZapCard() {
         });
     } else {
       Swal.fire({
-        title: "Ops!",
-        text: "Verifique se todos os campos foram preenchidos!",
+        title: a("ops"),
+        text: a("checkFields"),
         icon: "error",
-        confirmButtonText: "Ok",
+        confirmButtonText: a("ok"),
         confirmButtonColor: "#16a34a",
       });
       //   alert("Preencha todos os campos!");

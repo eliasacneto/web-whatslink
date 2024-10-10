@@ -60,6 +60,17 @@
       },
 
 
+      "alerts": {
+        "ops": "Ops!",
+        "checkFields": "Verifique se todos os campos foram preenchidos!",
+        "ok": "Ok",
+        "clipboard":"Seu link copiado para a área de transferência!",
+        "close": "Fechar",
+        "openWhatsapp": "Abrir no WhatsApp",
+        "cleaning": "Limpando os campos..."
+      },
+
+
     "common": {
       "button": {
         "create": "Create Link",

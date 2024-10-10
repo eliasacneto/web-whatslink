@@ -57,6 +57,15 @@
         "cta2":"Get Extension"
       },
 
+      "alerts": {
+        "ops": "Oops!",
+        "checkFields": "Make sure all fields are filled in!",
+        "ok": "Ok",
+        "clipboard":"Your link copied to clipboard!",
+        "close": "Close",
+        "openWhatsapp": "Open on WhatsApp",
+        "cleaning": "Cleaning fields..."
+      },
 
     "common": {
       "button": {

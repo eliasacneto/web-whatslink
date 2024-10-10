@@ -57,6 +57,16 @@
         "cta2": "Descargar extensión"
     },
 
+    "alerts": {
+        "ops": "¡Ups!",
+        "checkFields": "¡Asegúrate de que todos los campos estén completos!",
+        "ok": "Bien",
+        "clipboard":"¡Tu enlace se copió en el portapapeles!",
+        "close": "Cerrar",
+        "openWhatsapp": "Abrir en WhatsApp",
+        "cleaning": "Limpiando campos..."
+    },
+
     "common": {
         "button": {
             "create": "Crear enlace",
